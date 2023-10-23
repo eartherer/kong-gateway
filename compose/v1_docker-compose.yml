@@ -1,0 +1,28 @@
+version: '3.9'
+name: kong2023
+networks:
+  kong-network:
+    external: false
+
+services:
+  hello1:
+    container_name: hello01
+    image: nginxdemos/hello:latest
+    networks:
+    - kong-network
+    ports:
+    - 40001:80
+  hello2:
+    container_name: hello02
+    image: nginxdemos/hello:latest
+    networks:
+    - kong-network
+    ports:
+    - 40002:80
+  hello3:
+    container_name: hello03
+    image: nginxdemos/hello:latest
+    networks:
+    - kong-network
+    ports:
+    - 40003:80
